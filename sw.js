@@ -14,6 +14,7 @@ const ASSETS = [
   './js/pages/insights.js',
   './js/pages/settings.js',
   './manifest.json',
+  './favicon.ico',
   './icons/0001-9118036015437569928.png',
   'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap',
   'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'

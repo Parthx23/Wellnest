@@ -541,13 +541,13 @@ const PlantSystem = {
 
       /* SVG inside: parallax nudge via JS transform */
       #plant-bg-wrap .wn-plant-svg {
-        width: min(340px, 85%);
+        width: min(380px, 95%);
         height: auto;
-        opacity: 0.28;
+        opacity: 0.65;
         display: block;
         flex-shrink: 0;
         margin-bottom: var(--bottom-nav-h, 72px);
-        filter: saturate(1.3);
+        filter: saturate(1.5) contrast(1.1);
         /* opacity transition for stage changes;
            transform is set by JS with no CSS transition so parallax is instant */
         transition: opacity 1s ease;
@@ -555,9 +555,9 @@ const PlantSystem = {
       }
 
       /* More vivid as plant grows */
-      #plant-bg-wrap[data-stage="3"] .wn-plant-svg { opacity: 0.32; }
-      #plant-bg-wrap[data-stage="4"] .wn-plant-svg { opacity: 0.36; }
-      #plant-bg-wrap[data-stage="5"] .wn-plant-svg { opacity: 0.42; }
+      #plant-bg-wrap[data-stage="3"] .wn-plant-svg { opacity: 0.75; }
+      #plant-bg-wrap[data-stage="4"] .wn-plant-svg { opacity: 0.85; }
+      #plant-bg-wrap[data-stage="5"] .wn-plant-svg { opacity: 0.95; }
 
       /* Dashboard: no longer needs overflow:hidden (plant is fixed now) */
       .screen-dashboard {

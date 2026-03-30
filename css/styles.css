@@ -111,7 +111,7 @@
 html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font);
-  background: var(--background);
+  background: transparent;
   color: var(--on-background);
   min-height: 100dvh;
   display: flex;
@@ -127,7 +127,7 @@ body {
   max-width: 430px;
   min-height: 100dvh;
   position: relative;
-  background: var(--background);
+  background: transparent;
   display: flex;
   flex-direction: column;
 }
@@ -693,3 +693,62 @@ input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
 /* but keep position/transform/opacity fast */
 .habit-progress-fill, .insight-bar-fill, .hist-bar-fill { transition: width .5s cubic-bezier(.4,0,.2,1); }
 .stepper-btn, .btn-primary, .nav-item { transition: background .15s, color .15s, transform .1s, box-shadow .2s; }
+
+/* ══════════════════════════════════════════════════════ */
+/* ── LIVE SCENERY BACKGROUND ── */
+/* ══════════════════════════════════════════════════════ */
+#live-scenery {
+  position: fixed; inset: 0; z-index: -2; pointer-events: none; overflow: hidden;
+  background: linear-gradient(to bottom, #dbe9f4 0%, var(--background) 100%);
+  transition: background 0.8s ease;
+}
+.dark-mode #live-scenery {
+  background: linear-gradient(to bottom, #050e14 0%, var(--background) 100%);
+}
+#live-scenery .orb {
+  position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.6;
+  animation: floatOrb 20s ease-in-out infinite alternate;
+}
+.orb.o1 { width: 30vw; height: 30vw; background: rgba(141, 237, 236, 0.4); top: -5%; left: -10%; }
+.orb.o2 { width: 40vw; height: 40vw; background: rgba(192, 236, 218, 0.3); bottom: 10%; right: -15%; animation-delay: -10s; }
+.dark-mode .orb.o1 { background: rgba(0, 79, 79, 0.5); }
+.dark-mode .orb.o2 { background: rgba(37, 78, 64, 0.4); }
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(6vw, 4vh) scale(1.1); }
+}
+
+#live-scenery .clouds { position: absolute; inset: 0; opacity: 1; transition: opacity 1s; }
+.dark-mode #live-scenery .clouds { opacity: 0.05; }
+.cloud {
+  position: absolute; background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px; filter: blur(5px);
+  animation: drift linear infinite;
+  left: -250px;
+}
+.cloud.c1 { width: 140px; height: 30px; top: 15%; animation-duration: 45s; }
+.cloud.c2 { width: 90px; height: 20px; top: 35%; animation-duration: 65s; animation-delay: -20s; }
+.cloud.c3 { width: 180px; height: 40px; top: 60%; animation-duration: 80s; animation-delay: -40s; }
+
+@keyframes drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100vw + 250px)); }
+}
+
+#live-scenery .stars { position: absolute; inset: 0; opacity: 0; transition: opacity 1s; }
+.dark-mode #live-scenery .stars { opacity: 1; }
+.star {
+  position: absolute; background: #fff; border-radius: 50%;
+  animation: twinkle 4s ease-in-out infinite; box-shadow: 0 0 4px rgba(255,255,255,0.8);
+}
+.star.s1 { width: 2px; height: 2px; top: 10%; left: 20%; animation-delay: 0s; }
+.star.s2 { width: 3px; height: 3px; top: 25%; left: 75%; animation-delay: 1.2s; }
+.star.s3 { width: 2px; height: 2px; top: 40%; left: 35%; animation-delay: 2.5s; }
+.star.s4 { width: 3px; height: 3px; top: 15%; left: 85%; animation-delay: 0.8s; }
+.star.s5 { width: 2px; height: 2px; top: 50%; left: 60%; animation-delay: 3s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
