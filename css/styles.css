@@ -92,6 +92,20 @@
   --on-error:              #690005;
 }
 
+/* Glassmorphism Dark Mode Overrides */
+.dark-mode .wellness-score-card,
+.dark-mode .habit-card,
+.dark-mode .tip-card,
+.dark-mode .summary-card,
+.dark-mode .streak-row,
+.dark-mode .hist-row,
+.dark-mode .settings-card,
+.dark-mode .habit-setup-card {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-text-size-adjust: 100%; }
@@ -273,11 +287,14 @@ body {
 .habit-setup-list { display: flex; flex-direction: column; gap: var(--sp3); }
 
 .habit-setup-card {
-  background: var(--surface-container-lowest);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--r-xl);
   padding: var(--sp4) var(--sp5);
   display: flex; align-items: center; justify-content: space-between; gap: var(--sp3);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 16px rgba(49, 51, 46, 0.04);
 }
 .habit-setup-left { display: flex; align-items: center; gap: var(--sp4); flex: 1; min-width: 0; }
 .habit-icon-wrap {
@@ -306,14 +323,14 @@ body {
 
 /* Score card */
 .wellness-score-card {
-  background: rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
   border-radius: var(--r-2xl);
   padding: var(--sp5) var(--sp6);
   display: flex; align-items: center; gap: var(--sp5);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 2px 16px rgba(49, 51, 46, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(49, 51, 46, 0.04);
 }
 .score-ring-wrap { position: relative; width: 100px; height: 100px; flex-shrink: 0; }
 .score-ring { width: 100%; height: 100%; }
@@ -335,14 +352,14 @@ body {
   gap: var(--sp3);
 }
 .habit-card {
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(8px) saturate(130%);
-  -webkit-backdrop-filter: blur(8px) saturate(130%);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
   border-radius: var(--r-xl);
   padding: var(--sp3) var(--sp3);
   display: flex; flex-direction: column; gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.40);
-  box-shadow: 0 1px 8px rgba(49, 51, 46, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 12px rgba(49, 51, 46, 0.03);
   transition: background .25s, box-shadow .25s, transform .15s;
 }
 .habit-card:hover {
@@ -410,17 +427,17 @@ body {
 
 /* Tip card */
 .tip-card {
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(8px) saturate(130%);
-  -webkit-backdrop-filter: blur(8px) saturate(130%);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
   border-radius: var(--r-xl);
   padding: var(--sp5);
   display: flex; gap: var(--sp4); align-items: flex-start;
   border-left: 3px solid var(--primary);
-  border-top: 1px solid rgba(255, 255, 255, 0.40);
-  border-right: 1px solid rgba(255, 255, 255, 0.40);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.40);
-  box-shadow: 0 1px 8px rgba(49, 51, 46, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 12px rgba(49, 51, 46, 0.03);
 }
 .tip-card-accent { border-left-color: var(--secondary); }
 .tip-icon .material-symbols-outlined {
@@ -437,12 +454,15 @@ body {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp3);
 }
 .summary-card {
-  background: var(--surface-container-lowest);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--r-xl);
   padding: var(--sp4) var(--sp3);
   text-align: center;
   display: flex; flex-direction: column; align-items: center; gap: 5px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 12px rgba(49, 51, 46, 0.03);
 }
 .summary-card .material-symbols-outlined { font-size: 22px;
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -453,11 +473,14 @@ body {
 
 /* 7-day streak */
 .streak-row {
-  background: var(--surface-container-lowest);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--r-xl);
   padding: var(--sp5) var(--sp4);
   display: flex; justify-content: space-between;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 12px rgba(49, 51, 46, 0.03);
 }
 .streak-day { display: flex; flex-direction: column; align-items: center; gap: 5px; }
 .streak-dot {
@@ -512,11 +535,14 @@ body {
 /* ══════════════════════════════════════════════════════ */
 .hist-list { display: flex; flex-direction: column; gap: var(--sp3); }
 .hist-row {
-  background: var(--surface-container-lowest);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--r-xl);
   padding: var(--sp4) var(--sp5);
   display: flex; gap: var(--sp4); align-items: flex-start;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 12px rgba(49, 51, 46, 0.03);
   transition: box-shadow .2s;
 }
 .hist-row:hover { box-shadow: var(--shadow-md); }
@@ -568,10 +594,13 @@ body {
   letter-spacing: .8px; color: var(--on-surface-variant);
 }
 .settings-card {
-  background: var(--surface-container-lowest);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--r-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 12px rgba(49, 51, 46, 0.03);
 }
 .setting-habit-row {
   display: flex; align-items: center; gap: var(--sp4); padding: var(--sp4) var(--sp5);

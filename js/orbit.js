@@ -100,7 +100,7 @@ const OrbitUI = {
 
     const key  = wrap.dataset.key;
     const C    = this.SZ / 2;
-    let dragging = false, startA = 0, startV = 0;
+    let dragging = false, lastA = 0, totalA = 0, startV = 0;
 
     const rawAngle = (cx, cy) => {
       const r = svg.getBoundingClientRect();
@@ -112,7 +112,8 @@ const OrbitUI = {
     const onStart = e => {
       dragging = true;
       const p = e.touches ? e.touches[0] : e;
-      startA = rawAngle(p.clientX, p.clientY);
+      lastA = rawAngle(p.clientX, p.clientY);
+      totalA = 0;
       startV = parseFloat(wrap.dataset.actual);
       svg.style.cursor = 'grabbing';
       e.preventDefault();
@@ -124,20 +125,26 @@ const OrbitUI = {
       const tgt  = parseFloat(wrap.dataset.target);
       const step = parseFloat(wrap.dataset.step);
 
-      let delta = rawAngle(p.clientX, p.clientY) - startA;
-      if (delta >  Math.PI) delta -= 2 * Math.PI;
-      if (delta < -Math.PI) delta += 2 * Math.PI;
+      let currA = rawAngle(p.clientX, p.clientY);
+      let diff = currA - lastA;
+      if (diff >  Math.PI) diff -= 2 * Math.PI;
+      if (diff < -Math.PI) diff += 2 * Math.PI;
 
-      let nv = Math.max(0, Math.min(tgt, startV + (delta / (2 * Math.PI)) * tgt));
+      totalA += diff;
+      lastA = currA;
+
+      let nv = Math.max(0, Math.min(tgt, startV + (totalA / (2 * Math.PI)) * tgt));
       nv = Math.round(nv / step) * step;
 
-      wrap.dataset.actual = nv;
-      this._updateDial(wrap, nv);
+      if (nv !== parseFloat(wrap.dataset.actual)) {
+        wrap.dataset.actual = nv;
+        this._updateDial(wrap, nv);
 
-      const log = Store.getTodayLog() || {};
-      log[key] = nv;
-      Store.setTodayLog(log);
-      if (window.patchDashboard) patchDashboard(key);
+        const log = Store.getTodayLog() || {};
+        log[key] = nv;
+        Store.setTodayLog(log);
+        if (window.patchDashboard) patchDashboard(key);
+      }
       e.preventDefault();
     };
 
@@ -237,7 +244,7 @@ const OrbitUI = {
         cursor: grab;
       }
       .orbit-arc {
-        transition: stroke-dasharray 0.08s linear;
+        /* no transition */
       }
 
       /* Center text */
@@ -255,7 +262,7 @@ const OrbitUI = {
 
       /* Draggable bubble */
       .orbit-bubble {
-        transition: cx 0.06s linear, cy 0.06s linear;
+        /* no transition */
         cursor: grab;
       }
 

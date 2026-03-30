@@ -1,0 +1,18 @@
+{
+  "name": "WellNest Tracker",
+  "short_name": "WellNest",
+  "description": "Your personal daily wellness habit tracker.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbf9f4",
+  "theme_color": "#006a6a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/0001-9118036015437569928.png",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

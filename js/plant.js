@@ -228,45 +228,51 @@ const PlantSystem = {
     <path d="M 107 96 C 122 78 147 73 154 88 C 160 101 140 110 107 99"
           fill="url(#leaf-g3)" filter="url(#leaf-sh)"/>
     <!-- Full flower 1 – left -->
-    <g id="fl-1" transform="translate(72 78)" style="animation:flowerBob 3s ease-in-out infinite">
-      <circle cx="0" cy="0" r="11" fill="#f48fb1" opacity="0.92"/>
-      <circle cx="0" cy="-9"  r="5.5" fill="#e91e63" opacity="0.85"/>
-      <circle cx="7.8" cy="4.5"  r="5.5" fill="#e91e63" opacity="0.85"/>
-      <circle cx="-7.8" cy="4.5" r="5.5" fill="#e91e63" opacity="0.85"/>
-      <circle cx="0" cy="0" r="5.5" fill="#fff9c4"/>
-      <circle cx="0" cy="0" r="2.5" fill="#ff8f00"/>
+    <g transform="translate(72 78)">
+      <g id="fl-1" style="animation:flowerBob 3s ease-in-out infinite">
+        <circle cx="0" cy="0" r="11" fill="#f48fb1" opacity="0.92"/>
+        <circle cx="0" cy="-9"  r="5.5" fill="#e91e63" opacity="0.85"/>
+        <circle cx="7.8" cy="4.5"  r="5.5" fill="#e91e63" opacity="0.85"/>
+        <circle cx="-7.8" cy="4.5" r="5.5" fill="#e91e63" opacity="0.85"/>
+        <circle cx="0" cy="0" r="5.5" fill="#fff9c4"/>
+        <circle cx="0" cy="0" r="2.5" fill="#ff8f00"/>
+      </g>
     </g>
     <!-- Full flower 2 – right -->
-    <g id="fl-2" transform="translate(134 76)" style="animation:flowerBob 3s ease-in-out infinite 0.4s">
-      <circle cx="0" cy="0" r="11" fill="#f48fb1" opacity="0.92"/>
-      <circle cx="0" cy="-9"  r="5.5" fill="#e91e63" opacity="0.85"/>
-      <circle cx="7.8" cy="4.5"  r="5.5" fill="#e91e63" opacity="0.85"/>
-      <circle cx="-7.8" cy="4.5" r="5.5" fill="#e91e63" opacity="0.85"/>
-      <circle cx="0" cy="0" r="5.5" fill="#fff9c4"/>
-      <circle cx="0" cy="0" r="2.5" fill="#ff8f00"/>
+    <g transform="translate(134 76)">
+      <g id="fl-2" style="animation:flowerBob 3s ease-in-out infinite 0.4s">
+        <circle cx="0" cy="0" r="11" fill="#f48fb1" opacity="0.92"/>
+        <circle cx="0" cy="-9"  r="5.5" fill="#e91e63" opacity="0.85"/>
+        <circle cx="7.8" cy="4.5"  r="5.5" fill="#e91e63" opacity="0.85"/>
+        <circle cx="-7.8" cy="4.5" r="5.5" fill="#e91e63" opacity="0.85"/>
+        <circle cx="0" cy="0" r="5.5" fill="#fff9c4"/>
+        <circle cx="0" cy="0" r="2.5" fill="#ff8f00"/>
+      </g>
     </g>
     <!-- Crown flower – center -->
-    <g id="fl-c" transform="translate(106 70)" style="animation:flowerBob 3.5s ease-in-out infinite 0.2s">
-      <circle cx="0" cy="0" r="14" fill="#e91e63" opacity="0.9" filter="url(#glow-f)"/>
-      <circle cx="0"   cy="-12" r="6.5" fill="#f48fb1"/>
-      <circle cx="10.4" cy="6"  r="6.5" fill="#f48fb1"/>
-      <circle cx="-10.4" cy="6" r="6.5" fill="#f48fb1"/>
-      <circle cx="0" cy="0" r="7"   fill="#fff176"/>
-      <circle cx="0" cy="0" r="3.5" fill="#ff8f00"/>
+    <g transform="translate(106 70)">
+      <g id="fl-c" style="animation:flowerBob 3.5s ease-in-out infinite 0.2s">
+        <circle cx="0" cy="0" r="14" fill="#e91e63" opacity="0.9" filter="url(#glow-f)"/>
+        <circle cx="0"   cy="-12" r="6.5" fill="#f48fb1"/>
+        <circle cx="10.4" cy="6"  r="6.5" fill="#f48fb1"/>
+        <circle cx="-10.4" cy="6" r="6.5" fill="#f48fb1"/>
+        <circle cx="0" cy="0" r="7"   fill="#fff176"/>
+        <circle cx="0" cy="0" r="3.5" fill="#ff8f00"/>
+      </g>
     </g>
   </g>
 
   <!-- ── Habit FX: Water drops (hydration) ── -->
   <g id="pl-water" style="opacity:0;transition:opacity 0.8s">
-    <g class="wdrop" style="animation:wRise 2.2s ease-out infinite 0s">
+    <g class="wdrop" style="animation:wRise 2.2s ease-out infinite 0s; transform-origin: 83.5px 263px">
       <path d="M 82 272 C 80 267 77 262 80 258 C 83 254 87 257 85 262 C 83 267 82 272 82 272"
             fill="#4fc3f7" opacity="0.8"/>
     </g>
-    <g class="wdrop" style="animation:wRise 2.2s ease-out infinite 0.75s">
+    <g class="wdrop" style="animation:wRise 2.2s ease-out infinite 0.75s; transform-origin: 116px 265px">
       <path d="M 116 274 C 114 269 111 264 114 260 C 117 256 121 259 119 264 C 117 269 116 274 116 274"
             fill="#29b6f6" opacity="0.7"/>
     </g>
-    <g class="wdrop" style="animation:wRise 2.2s ease-out infinite 1.5s">
+    <g class="wdrop" style="animation:wRise 2.2s ease-out infinite 1.5s; transform-origin: 99px 261px">
       <path d="M 99 270 C 97 265 94 260 97 256 C 100 252 104 255 102 260 C 100 265 99 270 99 270"
             fill="#4fc3f7" opacity="0.6"/>
     </g>
@@ -274,15 +280,15 @@ const PlantSystem = {
 
   <!-- ── Habit FX: Sparkles (screenBreaks) ── -->
   <g id="pl-sparks" style="opacity:0;transition:opacity 0.8s">
-    <g style="animation:spkl 1.6s ease-in-out infinite 0s">
+    <g style="animation:spkl 1.6s ease-in-out infinite 0s; transform-origin: 40px 148px">
       <path d="M 38 148 L 40 141 L 42 148 L 40 155 Z" fill="#fff176"/>
       <path d="M 33 148 L 40 145 L 47 148 L 40 151 Z" fill="#fff176"/>
     </g>
-    <g style="animation:spkl 1.6s ease-in-out infinite 0.55s">
+    <g style="animation:spkl 1.6s ease-in-out infinite 0.55s; transform-origin: 164px 165px">
       <path d="M 162 165 L 164 158 L 166 165 L 164 172 Z" fill="#b2dfdb"/>
       <path d="M 157 165 L 164 162 L 171 165 L 164 168 Z" fill="#b2dfdb"/>
     </g>
-    <g style="animation:spkl 1.6s ease-in-out infinite 1.1s">
+    <g style="animation:spkl 1.6s ease-in-out infinite 1.1s; transform-origin: 24px 205px">
       <path d="M 22 205 L 24 198 L 26 205 L 24 212 Z" fill="#c8e6c9"/>
       <path d="M 17 205 L 24 202 L 31 205 L 24 208 Z" fill="#c8e6c9"/>
     </g>
@@ -290,16 +296,16 @@ const PlantSystem = {
 
   <!-- ── Habit FX: Petals (stressRelief) ── -->
   <g id="pl-petals" style="opacity:0;transition:opacity 0.8s">
-    <g style="animation:pFall 3.5s ease-in infinite 0s">
+    <g style="animation:pFall 3.5s ease-in infinite 0s; transform-origin: 158px 96px">
       <ellipse cx="158" cy="96"  rx="7" ry="3" fill="#f48fb1" opacity="0.75" transform="rotate(-30 158 96)"/>
     </g>
-    <g style="animation:pFall 3.5s ease-in infinite 1.15s">
+    <g style="animation:pFall 3.5s ease-in infinite 1.15s; transform-origin: 42px 128px">
       <ellipse cx="42"  cy="128" rx="6" ry="2.5" fill="#f8bbd0" opacity="0.65" transform="rotate(20 42 128)"/>
     </g>
-    <g style="animation:pFall 3.5s ease-in infinite 2.3s">
+    <g style="animation:pFall 3.5s ease-in infinite 2.3s; transform-origin: 172px 182px">
       <ellipse cx="172" cy="182" rx="5" ry="2" fill="#f48fb1" opacity="0.55" transform="rotate(-50 172 182)"/>
     </g>
-    <g style="animation:pFall 3.5s ease-in infinite 0.6s">
+    <g style="animation:pFall 3.5s ease-in infinite 0.6s; transform-origin: 28px 160px">
       <ellipse cx="28"  cy="160" rx="5" ry="2" fill="#fce4ec" opacity="0.6" transform="rotate(35 28 160)"/>
     </g>
   </g>
@@ -497,8 +503,8 @@ const PlantSystem = {
       }
       /* ─ Sun size pulse ─ */
       @keyframes sunPulse {
-        0%,100% { r:19; }
-        50%      { r:21; }
+        0%,100% { transform: scale(1); }
+        50%      { transform: scale(1.1); }
       }
 
       /* Apply sway to each stage group */
@@ -511,7 +517,7 @@ const PlantSystem = {
       #pl-s4.pl-sway { animation-duration: 6.5s; animation-delay: 0.9s; }
       #pl-s5.pl-sway { animation-duration: 7s;   animation-delay: 1.2s; }
 
-      #pl-sun { animation: sunPulse 3.5s ease-in-out infinite; }
+      #pl-sun { animation: sunPulse 3.5s ease-in-out infinite; transform-origin: 168px 34px; }
 
       /* ══════════════════════════════════════════════════
          FIXED BACKGROUND PLANT + PARALLAX

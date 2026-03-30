@@ -113,7 +113,7 @@ function dayState(score) {
 const TIPS = {
   hydration:    "💧 You're under your hydration goal. Try keeping a water bottle at your desk and taking sips every 30 minutes.",
   sleep:        "🌙 Your sleep needs attention. Try winding down 30 minutes earlier tonight—dim lights and skip screens before bed.",
-  activity:     "🏃 Movement booosts mood and energy. Even a 10‑minute walk counts—try breaking it into shorter sessions.",
+  activity:     "🏃 Movement boosts mood and energy. Even a 10‑minute walk counts—try breaking it into shorter sessions.",
   meals:        "🥗 Nourishing meals fuel your day. Try prepping simple, balanced options the night before.",
   screenBreaks: "👁 Give your eyes regular rest. Try the 20‑20‑20 rule: every 20 min, look 20 feet away for 20 seconds.",
   stressRelief: "🧘 Your stress relief scores are low. Even 2 minutes of deep breathing can reset your nervous system.",
